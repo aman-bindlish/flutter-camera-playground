@@ -25,6 +25,8 @@ dependencies:
     sdk: flutter
   # lib for accessing device camera on both android & iOS
   camera: ^0.5.2+1
+  # lib for showing device camera for picture or to choose from gallery
+  image_picker: ^0.4.5
   # lib for common locations in filesystem
   path_provider: ^1.1.0
   # path manipulation lib for  dart

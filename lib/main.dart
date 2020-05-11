@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'camera/camera_screen.dart';
+import 'package:fluttercameraplayground/launcher_screen.dart';
 
 void main() => runApp(CameraPlaygroundApp());
 
@@ -25,7 +25,7 @@ class CameraPlaygroundApp extends StatelessWidget {
         // closer together (more dense) than on mobile platforms.
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: CameraScreen(),
+      home: LauncherScreen(),
     );
   }
 }
