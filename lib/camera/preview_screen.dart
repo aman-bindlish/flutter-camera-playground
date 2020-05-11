@@ -39,6 +39,7 @@ class PreviewScreenState extends State<PreviewScreen> {
                 padding: EdgeInsets.all(60.0),
                 child: RaisedButton(
                   onPressed: () {
+                    /// on click of button image file can be shared through ByteData
                     getBytesFromFile().then((bytes) {
                       Share.file('Share via:', basename(widget.imagePath),
                           bytes.buffer.asUint8List(), 'image/png');
