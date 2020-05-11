@@ -1,5 +1,8 @@
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttercameraplayground/camera/preview_screen.dart';
+import 'package:path/path.dart';
+import 'package:path_provider/path_provider.dart';
 
 class CameraScreen extends StatefulWidget {
 
@@ -177,7 +180,23 @@ class CameraScreenState extends State {
     _initCameraController(selectedCamera);
   }
 
+  /// will be called when click picture button will be pressed, for taking picture
   void _onCapturePressed(context) async {
-    // TODO: Logic for capture picture
+    try {
+      // join is used to join the different paths into one final path
+      final path = join(
+        (await getTemporaryDirectory()).path,
+        '${DateTime.now()}.png',
+      );
+      await controller.takePicture(path);
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => PreviewScreen(imagePath: path),
+        ),
+      );
+    } catch (e) {
+      print(e);
+    }
   }
 }
