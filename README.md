@@ -17,7 +17,9 @@ samples, guidance on mobile development, and a full API reference.
 
 ### Some of the screenshots from playground
 
-* ![Playground Launcher Screen](/media/playground_launcher.png)
-* ![Playground Gallery Screen](/media/playground_gallery.png)
-* ![Playground Preview Screen](/media/playground_preview.png)
-* ![Playground Share Screen](/media/playground_share.png)
+Playground iOS                                            |  Playground Android
+:-------------------------------------------------------: | :----------------------------------------------------:
+<img src="/media/playground_launcher.png" width="200" />  |  <img src="/media/launcher_android.jpg" width="150" />
+<img src="/media/playground_gallery.png" width="200" />   |  <img src="/media/custom_camera_android.jpg" width="150" />
+<img src="/media/playground_preview.png" width="200" />   |  <img src="/media/gallery_android.jpg" width="150" />
+<img src="/media/playground_share.png" width="200" />     |  <img src="/media/preview_android.jpg" width="150" />
