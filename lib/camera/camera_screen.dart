@@ -137,9 +137,44 @@ class CameraScreenState extends State {
     );
   }
 
-  /// To display a row of toggle to select the camera (or a message if no camera is available).
+  /// To display a row of toggle to switch the camera (or a message if no camera is available).
   Widget _cameraTogglesRowWidget() {
-    return Spacer();
+    if (cameras == null || cameras.isEmpty) {
+      return Spacer();
+    }
+    CameraDescription selectedCamera = cameras[selectedCameraIdx];
+    CameraLensDirection lensDirection = selectedCamera.lensDirection;
+    return Expanded(
+      child: Align(
+        alignment: Alignment.centerLeft,
+        child: FlatButton.icon(
+            onPressed: _onSwitchCamera,
+            icon: Icon(_getCameraLensIcon(lensDirection)),
+            label: Text(
+                "${lensDirection.toString().substring(lensDirection.toString().indexOf('.') + 1)}")),
+      ),
+    );
+  }
+
+  /// for showing selected camera icon
+  IconData _getCameraLensIcon(CameraLensDirection direction) {
+    switch (direction) {
+      case CameraLensDirection.back:
+        return Icons.camera_rear;
+      case CameraLensDirection.front:
+        return Icons.camera_front;
+      case CameraLensDirection.external:
+        return Icons.camera;
+      default:
+        return Icons.device_unknown;
+    }
+  }
+
+  /// for switching the cameras
+  void _onSwitchCamera() {
+    selectedCameraIdx = selectedCameraIdx < cameras.length - 1 ? selectedCameraIdx + 1 : 0;
+    CameraDescription selectedCamera = cameras[selectedCameraIdx];
+    _initCameraController(selectedCamera);
   }
 
   void _onCapturePressed(context) async {
