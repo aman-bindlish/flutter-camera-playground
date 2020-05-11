@@ -23,7 +23,14 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
+  # lib for accessing device camera on both android & iOS
+  camera: ^0.5.2+1
+  # lib for common locations in filesystem
+  path_provider: ^1.1.0
+  # path manipulation lib for  dart
+  path: ^1.6.2
+  # for sharing files and texts with other apps
+  esys_flutter_share: ^1.0.2
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
